@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from routes.baseHandler import BaseHandler
 from models.Users import Users
 
-class LoginHandler(BaseHandler):
+class SignupHandler(BaseHandler):
     def initialize(self, database):
         self.users = Users(database)
     
@@ -16,7 +16,7 @@ class LoginHandler(BaseHandler):
             self.redirect('/')
             return
         
-        self.render('login.html')
+        self.render('signup.html')
         
     def post(self, **kwargs):
         if self.current_user:
@@ -25,9 +25,11 @@ class LoginHandler(BaseHandler):
         
         username = self.get_argument("username", "")
         password = self.get_argument("password", "")
+        confirm = self.get_argument("confirm", "")
         
-        if(self.users.login(username, password)):
+        if(confirm == password):
+            self.users.put({"username": username, "password": password})
             self.set_secure_cookie("user", username)
             self.redirect("/")
         else:
-            self.render('login.html')
+            self.render('signup.html')

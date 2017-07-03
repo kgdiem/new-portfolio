@@ -1,13 +1,13 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 import tornado.web
 
 from pymongo import MongoClient
 from bson.json_util import dumps, loads
 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from routes.baseHandler import BaseHandler
 from models.Projects import Projects
 
 class ProjectHandler(tornado.web.RequestHandler):
@@ -21,10 +21,11 @@ class ProjectHandler(tornado.web.RequestHandler):
         
         self.write(res)
         
-class CreateProjectHandler(tornado.web.RequestHandler):
+class CreateProjectHandler(BaseHandler):
     def initialize(self, database):
         self.projects = Projects(database)
     
+    @tornado.web.authenticated
     def post(self, **kwargs):
         data = self.get_argument('data', '{}')
         
