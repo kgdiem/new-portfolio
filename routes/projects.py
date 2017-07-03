@@ -26,11 +26,23 @@ class CreateProjectHandler(BaseHandler):
         self.projects = Projects(database)
     
     @tornado.web.authenticated
+    def get(self):
+        self.render('submit.html')
+    
+    @tornado.web.authenticated
     def post(self, **kwargs):
-        data = self.get_argument('data', '{}')
+        project = dict()
         
-        json = loads(data)
+        project['name'] = self.get_argument('name', '')
+        project['category'] = self.get_argument('category', '')
+        project['url'] = self.get_argument('url', '')
+        project['img'] = self.get_argument('img', '')
+        project['git'] = self.get_argument('git', '')
         
-        id = self.projects.put(json)
+        attrs = self.get_argument('attrs', '').split(',')
+        
+        project['attrs'] = attrs
+        
+        id = self.projects.put(project)
         
         self.write('{"id": "%s"}' % str(id))
