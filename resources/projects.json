@@ -1,0 +1,139 @@
+[
+    {
+    	"name": "GenEd PEX Passport",
+    	"category":"full",
+    	"url":"https://gened.temple.edu/pexpassport",
+    	"img":"https://kevindiem.com/images/pex.gif",
+    	"attrs": ["PHP", "WordPress", "MySQL",  "Angular", "Bootstrap", "Sass"]
+    },
+    {
+    	"name": "FarmFresh",
+    	"category":"full",
+    	"url":"",
+    	"img":"https://kevindiem.com/images/farmfresh.png",
+    	"attrs": ["Node", "Express", "MongoDB", "jQuery", "Jade", "Sass"]
+    },
+    {
+    	"name": "FCC Pollinator",
+    	"category":"full",
+    	"url":"https://powerful-fortress-52672.herokuapp.com/",
+    	"github": "https://github.com/kgdiem/fcc-pollinator",
+    	"img":"https://kevindiem.com/images/polls.gif",
+    	"attrs": ["Node", "Express", "MongoDB", "Heroku", "Angular2", "Jade", "Sass"]
+    },
+    {
+    	"name": "JailJawn",
+    	"category":"full",
+    	"url":"https://jailjawn.com",
+    	"img":"https://kevindiem.com/images/jailjawn.png",
+    	"attrs": ["Node","Firebase", "Heroku", "jQuery",  "amCharts"]
+    },
+    {
+    	"name": "GenEd Homepage",
+    	"category":"front",
+    	"url":"https://gened.temple.edu/",
+    	"img":"https://kevindiem.com/images/gened.gif",
+    	"attrs": ["PHP", "WordPress", "jQuery", "Sass", "Boostrap"]
+    },
+    {
+      "name": "WitchyPHP",
+      "category": "full",
+      "url": "",
+      "img": "https://kevindiem.com/images/witchy.png",
+      "github": "https://github.com/kgdiem/3501-symfony",
+      "attrs": ["PHP", "Symfony", "MySQL", "Twig", "Sass"]
+    },
+    {
+      "name": "Defend Your Future Garden",
+      "category": "full",
+      "url": "https://defendyourfuturegarden.com/#/",
+      "img": "https://kevindiem.com/images/garden.png",
+      "attrs": ["Node", "Express", "MongoDB", "Angular", "EJS", "Sass", "Bootstrap"]
+    },
+    {
+      "name": "Timestamp Microservice",
+      "category": "back",
+      "url": "https://evening-mountain-9788.herokuapp.com/",
+      "img": "https://kevindiem.com/images/timestamp.png",
+      "attrs": ["Node", "Heroku"]
+    },
+
+    {
+	"name": "Steve Buscemi Campaign Site",
+        "category": "full",
+	"url": "https://buscemi-kevindiem.rhcloud.com/",
+	"img": "https://kevindiem.com/images/buscemi.png",
+	"attrs": ["PHP", "Laravel", "MySQL", "LESS", "Boostrap"]
+    },
+	{
+	 "name": "JS Calculator", 
+	 "category": "front",
+	 "url": "https://codepen.io/kgdiem/full/YyZOqV",
+	 "img": "https://kevindiem.com/images/calculator.png",
+	 "attrs": ["jQuery"]
+	},
+	{
+	 "name": "Wikipedia Search", 
+	 "category": "front",
+	 "url": "https://codepen.io/kgdiem/full/pjwMRK",
+	 "img": "https://kevindiem.com/images/wikipedia.png",
+	 "attrs": ["jQuery"]
+	},
+	{
+	 "name": "JS Tic Tac Toe", 
+	 "category": "front",
+	 "url": "https://codepen.io/kgdiem/full/JYyjqz",
+	 "img": "https://kevindiem.com/images/tictactoe.png",
+	 "attrs": ["jQuery"]
+	},
+	{
+	 "name": "Simon Says", 
+	 "category": "front",
+	 "url": "https://codepen.io/kgdiem/full/zvLddg",
+	 "img": "https://kevindiem.com/images/simon.png",
+	 "attrs": ["jQuery", "Bootstrap"]
+	},
+	{
+	 "name": "Rep Counter", 
+	 "category": "android",
+	 "url": "https://github.com/kgdiem/android-rep-counter",
+	 "github": "https://github.com/kgdiem/android-rep-counter",
+	 "img": "https://kevindiem.com/images/repcounter.png",
+	 "attrs": ["Java", "Android Studio"]
+	},
+	{
+	 "name": "SimonZilla", 
+	 "category": "android",
+	 "url": "https://play.google.com/store/apps/details?id=com.kevindiem.simonzilla",
+	 "img": "https://kevindiem.com/images/zilla.png",
+	 "attrs": ["Cordova", "jQuery"]
+	},
+	{
+	 "name": "Local Weather",
+	 "category": "front",
+	 "url": "https://codepen.io/kgdiem/full/jbqGOK",
+	 "img": "https://kevindiem.com/images/weather.png",
+	 "attrs": ["jQuery", "Bootstrap"]
+	},
+	{
+	 "name": "Countdown Timer",
+	 "category": "front",
+	 "url": "https://codepen.io/kgdiem/full/pjbJMX",
+	 "img": "https://kevindiem.com/images/clock.png",
+	 "attrs": ["jQuery", "Bootstrap"]
+	},
+	{
+	 "name": "Twitch.TV Streams", 
+	 "category": "front",
+	 "url": "https://codepen.io/kgdiem/full/yYVVvj",
+	 "img": "https://kevindiem.com/images/twitch.png",
+	 "attrs": ["Angular", "Bootstrap"]
+	},
+	{
+	 "name": "Chuck Norris Facts", 
+	 "category": "front",
+	 "url": "https://codepen.io/kgdiem/full/avdJdX",
+	 "img": "https://kevindiem.com/images/quotes.png",
+	 "attrs": ["jQuery", "Bootstrap"]
+	}
+]
