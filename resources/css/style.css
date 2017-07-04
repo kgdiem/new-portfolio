@@ -129,6 +129,10 @@ nav a {
   right: 10%;
 }
 
+.projects{
+  height: 327px;  
+}
+
 .project {
   width: 700px;
   max-width: 100%;

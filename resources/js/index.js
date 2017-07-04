@@ -1,7 +1,7 @@
 'use strict';
 
 /* Fetch the data */
-fetch("resources/projects.json").then(function (response) {
+fetch("/projects").then(function (response) {
   return response.json();
 }).then(function (data) {
 
@@ -19,12 +19,17 @@ function addProjects(projects) {
   var attrs = '';
   projects.map(function (project) {
     attrs = '';
-
-    project.attrs.map(function (attr) {
-      attrs += '<span> ' + attr + '; </span>';
+    if(project.attrs)
+      project.attrs.map(function (attr) {
+        attrs += '<span> ' + attr + '; </span>';
     });
 
-    document.getElementById(project.category).innerHTML += '\n    <div class="project">\n      <h2 class="title text-center"> <a href="' + project.url + '">' + project.name + '</a> </h2>\n      <img src="' + project.img + '">\n      <div class="attributes">\n        ' + attrs + '\n      </div>\n    </div>\n    ';
+    var category = document.getElementById(project.category);
+    
+    if(category)
+      category.innerHTML += '\n    <div class="project">\n      <h2 class="title text-center"> <a href="' + project.url + '">' + project.name + '</a> </h2>\n      <img src="' + project.img + '">\n      <div class="attributes">\n        ' + attrs + '\n      </div>\n    </div>\n    ';
+  
+    
   });
 }
 
