@@ -38,6 +38,7 @@ class CreateProjectHandler(BaseHandler):
         project['url'] = self.get_argument('url', '')
         project['img'] = self.get_argument('img', '')
         project['git'] = self.get_argument('git', '')
+        project['description'] = self.get_argument('description', '')
         
         attrs = self.get_argument('attrs', '').split(',')
         
