@@ -1,113 +1,109 @@
-'use strict';
+var projectSection = document.querySelector('#projects');
+var projectContainer = document.querySelector('#projects .container');
+var home = document.querySelector('#top');
+var type = document.querySelector('#type');
+var interval; 
 
-/* Fetch the data */
-fetch("/projects").then(function (response) {
-  return response.json();
-}).then(function (data) {
+var types = ['web', 'android', 'javascript', 'java', 'php', 'python'];
 
-  addProjects(data);
-
-  var carousel = new Carousel();
-  carousel.hideElements();
-  carousel.addEventHandlers();
-}).catch(function (error) {
-  console.log(error);
+getProjects().then(json => {
+  appendProjects(json);
 });
 
-/* add projects to the page */
-function addProjects(projects) {
-  var attrs = '';
-  projects.map(function (project) {
-    attrs = '';
-    if(project.attrs)
-      project.attrs.map(function (attr) {
-        attrs += '<span> ' + attr + '; </span>';
-    });
+document.querySelector('a[href="#projects"]').onclick = switchToProjects;
+document.querySelector('#back').onclick = switchToHome;
 
-    var category = document.getElementById(project.category);
-    
-    if(category)
-      category.innerHTML += '\n    <div class="project">\n      <h2 class="title text-center"> <a href="' + project.url + '">' + project.name + '</a> </h2>\n      <img src="' + project.img + '">\n      <div class="attributes">\n        ' + attrs + '\n      </div>\n    </div>\n    ';
+changeTextInitiator();
+
+async function getProjects(){
+  var data = await fetch('/projects');
   
-    
+  var json = await data.json();
+  
+  console.log(json);
+  return json;
+}
+
+function appendProjects(projects){
+  projects.map((project, i) => {
+    projectSection.appendChild(projectNode(project));
   });
 }
 
-function Carousel() {
-  /* get elements to fill */
-  var full = document.getElementById("full"),
-      front = document.getElementById("front"),
-      back = document.getElementById("back"),
-      android = document.getElementById("android");
+function projectNode(project){
+  var p = document.createElement('div');
+  
+  var description = project.description ? project.description : `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`;
 
-  /* Get list of projects */
-  this.projectElements = {
-    fullProjects: full.getElementsByClassName("project"),
-    frontProjects: front.getElementsByClassName("project"),
-    backProjects: back.getElementsByClassName("project"),
-    androidProjects: android.getElementsByClassName("project")
-  };
-
-  this.indexes = {
-    full: 0,
-    front: 0,
-    back: 0,
-    android: 0
-  };
-
-  var that = this;
-
-  this.addEventHandlers = function addEventHandlers() {
-    /* Get arrows */
-    var arrows = document.getElementsByClassName("arrow");
-
-    var i = 0;
-    /* set onclick handler for each arrow */
-    for (i; i < arrows.length; i++) {
-      arrows[i].onclick = that.shift;
-    }
-  };
-
-  this.hideElements = function hideElements() {
-    var projectElements = that.projectElements;
-
-    /* Get keys of each list */
-    var keys = Object.keys(projectElements);
-
-    /* We only want to hide the 2nd argument */
-    var i = 1;
-
-    /* loop thru keys */
-    keys.map(function (key) {
-      /* reset i */
-      i = 1;
-
-      /* if there's more than 1 */
-      if (projectElements[key][i]) {
-        /* loop thru and hide 'em */
-        for (i; i < projectElements[key].length; i++) {
-          projectElements[key][i].style.display = "none";
-        }
-      }
-    });
-  };
-
-  /* Shift the carousel */
-  this.shift = function shift(event) {
-    var c = this.className,
-        id = this.parentNode.id,
-        index = that.indexes[id],
-        length = that.projectElements[id + "Projects"].length;
-
-    /* if it's right, add else subtract*/
-    if (/(right)/ig.test(c)) {
-      that.indexes[id] = index + 1 < length ? index + 1 : 0;
-    } else {
-      that.indexes[id] = index - 1 < 0 ? length - 1 : index - 1;
-    }
-
-    /*Switch the elements display properties*/
-    that.projectElements[id + "Projects"][index].style.display = "none";
-    that.projectElements[id + "Projects"][that.indexes[id]].style.display = "block";
-  };
+  p.classList.add('col-12');
+  p.classList.add('projects');
+  
+  if(project.git){
+    description += `<br><a href="${project.git}"><img height="50px" width="50px" src="http://untv.github.io/assets/images/github-icon-black.svg"></a>`;
+  }
+  
+  if(project.url){
+    if(!project.git)
+      description += '<br>';
+      
+    description += `<a href="${project.url}"><img height="50px" width="40px" src="http://cdn.onlinewebfonts.com/svg/img_387394.svg"></a>`
+  }
+  
+  p.innerHTML = `
+    <h2>${project.name}</h2>
+    <div class="projects-div">
+      <div>
+        <img class="project-img" src="${project.img}">
+        <p>${description}</p>
+      </div>
+    </div>`;
+    
+  return p;
+  
 }
+
+function switchToProjects(e){
+  e.preventDefault();
+  e.stopPropagation();
+  
+  home.style.display = 'none';
+  
+  clearInterval(interval);
+  
+  projectSection.style.display = 'initial';
+    
+  
+}
+
+function switchToHome(e){
+  e.preventDefault();
+  e.stopPropagation();
+  
+  projectSection.style.display = 'none';
+    
+  changeTextInitiator();
+  
+  home.style.display = 'initial';
+}
+
+function changeTextInitiator(index = 0){
+  
+  changeText(types[index]);
+  
+  interval = setInterval(function(){
+    index++;
+    
+    if(index >= types.length)
+      index = 0;
+    
+    changeText(types[index]);
+    
+  }, 2000);
+  
+}
+
+function changeText(str){
+  
+  type.textContent = str;
+}
+
