@@ -4,75 +4,40 @@
     <meta charset="UTF-8">
     <title>Kevin Diem</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    
-    	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
-	    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Bungee|Bungee+Inline'>
-        <link rel="stylesheet" href="resources/css/style.css">
-        
-	    <script src="resources/js/fetchPromise.js"></script>
-        <script src="resources/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/css/spectre.css"></link>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css"></link>
   </head>
 
   <body>
-
     
-<nav id="n">
-  <div id="navbar">
-    <div id="brand"><span> <a href="#main">Kevin Diem</a></span></div>
-    <div id="nav">
-      <ul>
-        <li> <a href="#projects">Projects</a></li>
-        <li> <a href="https://community.mis.temple.edu/kevindiem/blog/" target="_blank">Blog</a></li>
-        <li> <a href="#about">About</a></li>
-        <li> <a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<section id="top">
-  <div id="main" class="section-inner text-center">
-    <div id="headline">
-      <h4> I'm a software developer based in Philadelphia, PA. I write JavaScripts and do stuff.</h4>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="section-inner" id="projects">
-    <h1 class="text-center" style="color: red;"> Under construction </h1>
-    <h1 class="header">Full Stack</h1>
-    <div class="projects" id="full"><a class="arrow arrow-left"><i class="fa fa-arrow-circle-left"></i></a><a class="arrow arrow-right"><i class="fa fa-arrow-circle-right"></i></a>
-      <div class="indicators"></div>
-    </div>
-    <h1 class="header">Front End</h1>
-    <div class="projects" id="front"><a class="arrow arrow-left"><i class="fa fa-arrow-circle-left"></i></a><a class="arrow arrow-right"><i class="fa fa-arrow-circle-right"></i></a>
-      <div class="indicators"></div>
-    </div>
-    <h1 class="header">Back End</h1>
-    <div class="projects" id="back"><a class="arrow arrow-left"><i class="fa fa-arrow-circle-left"></i></a><a class="arrow arrow-right"><i class="fa fa-arrow-circle-right"></i></a>
-      <div class="indicators"></div>
-    </div>
-    <h1 class="header">Android</h1>
-    <div class="projects" id="android"><a class="arrow arrow-left"><i class="fa fa-arrow-circle-left"></i></a><a class="arrow arrow-right"><i class="fa fa-arrow-circle-right"></i></a>
-      <div class="indicators"></div>
-    </div>
-  </div>
-</section>
-<section id="last">
-  <div class="section-inner">
-    <div id="about">
-      <h1 class="text-center">About Me</h1>
-      <p>I'm a software developer at Temple University.</p>
-    </div>
-    <div id="contact" class="text-center">
-      <h1>Interested in working together?</h1>
-      <p></p>
-      <div id="icons"><a href="://github.com/kgdiem"><i class="fa fa-github"></i></a><a href="://www.linkedin.com/in/kevin-diem-9b817b104"><i class="fa fa-linkedin"></i></a><a href="/cdn-cgi/l/email-protection#f79c92819e99b79c92819e99939e929ad994989a"><i class="fa fa-envelope"></i></a></div>
-    </div>
-  </div>
-</section>
-<footer>
-  <p>	&copy; 2016 kevindiem.com | <a href="/resume.pdf">Resume</a></p>
-</footer>    
-  <script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+    <section id="top">
+      <section>
+        <div id="intro">
+          <p>Hi,</p> 
+          <p>I'm Kevin.</p> 
+          <p>I make <span id="type"></span> apps.</p>
+        </div>
+      </section>
+      
+      <section id="links">
+        <div>
+          <a href="#projects">Projects</a>
+          <a href="https://github.com/kgdiem">Github</a>
+          <a href="https://www.linkedin.com/in/kevin-diem-9b817b104/">Linkedin</a>
+        </div>
+      </section>
+    </section>
+    
+    <section id="projects">
+      <div>
+        <a href="#" id="back"><</a>
+        <h1>Projects</h1>
+        <div class="container"></div>
+      </div>
+    </section>
+    
+    <script type="text/javascript" src="resources/js/index.js"></script>
+    
+  </body>
+  
 </html>

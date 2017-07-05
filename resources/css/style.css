@@ -1,476 +1,237 @@
-/*Reset */
-html, body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Bungee Inline';
-  overflow-x: hidden;
+section{
+  width: 100vw;
 }
 
-h1, h2, h3 {
-  margin-top: 0;
+#intro, #projects{
+  padding: 75px 0 50px 75px;
 }
 
-/* End Reset */
-/* General */
-.text-center {
+#top{
+  height: 100vh;
+}
+
+#intro p{
+  font-size: 7em;
+  line-height: 1em;
+  -webkit-animation: breathing 5s ease-out infinite normal;
+  animation: breathing 5s ease-out infinite normal;
+}
+
+#links{
   text-align: center;
 }
 
-section {
-  min-height: 600px;
-  margin: 0;
-  overflow: auto;
-  width: 100%;
+#links a{
+  border: 2px solid #50596c;
+  padding: 15px;
+  font-size: 1.5em;
+  color: #50596c;
+  margin-right: 15px;
 }
 
-.section-inner {
-  margin: 50px;
-}
-/* For anchor tags w fixed navbar */
-#projects::before, #about::before, #contact::before, #main::before{
-  content: '';
-  height: 75px;
-  margin-top: -75px;
-  width: 0;
-  display: block;
-  position: relative;
-}
-
-/* End General */
-/* Nav */
-nav {
-  background-color: black;
-  color: #FFFFFF;
-  min-height: 50px;
-  width: 100%;
-  padding-top: 25px;
-  position: fixed;
-  z-index: 1;
-}
-nav a {
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-#navbar {
-  width: 80%;
-  margin: 0 auto;
-  padding-bottom: 0;
-  font-size: 1.2rem;
-}
-#navbar #brand {
-  float: left;
-  display: inline-block;
-}
-#navbar #nav {
-  float: right;
-  display: inline-block;
-}
-#navbar #nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-#navbar #nav ul li {
-  display: inline-block;
-}
-#navbar #nav ul li:not(:last-child) {
-  margin-right: 25px;
-}
-
-/*End Nav*/
-/* Top section */
-#top {
-  background-color: #c2c2c2;
-  margin-top: 75px;
-}
-
-#main {
-  max-width: 100%;
-}
-#main h1 {
-  font-size: 3.5rem;
-}
-#main h2 {
-  font-size: 3rem;
-}
-#main h3 {
-  font-size: 2.5rem;
-}
-#main p {
-  margin-top: 50px;
-}
-
-#headline {
-  display: inline-block;
-}
-
-/* End top section*/
-/* Projects section */
-#projects {
-  background-color: #FFFFFF;
-}
-
-.arrow {
-  cursor: pointer;
-  font-size: 3rem;
-  margin-top: 200px;
-  position: absolute;
-  color: #979797;
-}
-
-.arrow-left {
-  float: left;
-  left: 10%;
-}
-
-.arrow-right {
-  float: right;
-  right: 10%;
+#projects{
+  display: none;
+  text-align: center;
 }
 
 .projects{
-  height: 327px;  
+  text-align: left;
+  padding: 0 75px 50px 75px;
 }
 
-.project {
-  width: 700px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-.project img {
-  height: 327px;
-  width: 698px;
-  max-width: 100%;
-}
-.project h2 a{
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.projects-div{
+  display: table;
 }
 
-.attributes {
-  width: 700px;
-  max-width: 100%;
+.projects h2{
   text-align: center;
-  margin-top: 5px;
-}
-.attributes span:not(:last-child) {
-  margin-right: 10px;
 }
 
-.header {
-  font-size: 3rem;
-}
-
-/* End projects */
-/* Contact section */
-#last {
-  background-color: #F1F1F1;
-}
-
-#about, #contact {
+.project-img{
   width: 50%;
-  display: inline-block;
-}
-#about h1, #contact h1 {
-  font-size: 2rem;
-}
-
-#about {
-  float: left;
-}
-#about p {
-  margin-top: 25px;
-  font-family: Arial;
-  font-weight: bold;
+  left: 0;
+  height: auto;
+  border: 2px solid #50596c;
 }
 
-#skills {
-  float: left;
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  margin-top: 25px;
-}
-
-#skills ul {
-  overflow-x: visible;
-  font-family: 'Bungee Inline';
-}
-
-.skill {
+.projects p{
   display: inline-block;
   text-align: left;
+  width: 40%;
+  margin-left: 5%;
   vertical-align: top;
 }
 
-.skill:not(:last-child) {
-  margin-right: 25px;
+.projects p img path{
+  fill: #50596c;
 }
 
-#contact {
-  float: right;
+#back{
   position: absolute;
-}
-#contact p {
-  max-width: 90%;
-  margin: 0 auto;
+  top: 15px;
+  left: 75px;
+  font-size: 3.5em;
+  color: #50596c;
 }
 
-#icons {
-  text-align: center;
-  margin-top: 25px;
-}
-#icons a {
-  font-size: 4.25rem;
-  margin: 0 auto;
-  color: black;
+#back:hover{
   text-decoration: none;
 }
-#icons a:not(:last-child) {
-  margin-right: 50px;
-}
 
-/* End contact section */
-/* Footer */
-footer {
-  height: 100px;
-  background-color: #686767;
-  color: #FFFFFF;
-}
-footer p {
-  text-align: center;
-  margin: 0;
-  padding-top: 40px;
-}
-footer a {
-  color: #FFFFFF;
-}
-
-/* End footer */
-@media screen and (max-width: 1135px) and (min-width: 791px) {
-  .skill {
-    width: 35%;
+@media screen and (max-width: 690px){
+  #intro{
+    padding: 50px 0 25px 50px;  
   }
-
-  .skill:nth-child(odd) {
-    float: right;
-  }
-
-  .skill:not(:last-child) {
-    margin-right: 0;
-  }
-}
-@media screen and (max-width: 1063px) {
-  #main h1 {
-    font-size: 3rem;
-  }
-  #main h2 {
-    font-size: 2.5rem;
-  }
-  #main h3 {
-    font-size: 2rem;
-  }
-
-  #navbar {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 960px) {
-  #main h1 {
-    font-size: 2.75rem;
-  }
-
-  .arrow-left {
-    left: 5%;
-  }
-
-  .arrow-right {
-    right: 5%;
-  }
-}
-@media screen and (max-width: 860px) {
-  #main h1 {
-    font-size: 2.5rem;
-  }
-  #main h2 {
-    font-size: 2rem;
-  }
-  #main h3 {
-    font-size: 1.5rem;
-  }
-
-  .arrow-left {
-    left: 0;
-  }
-
-  .arrow-right {
-    right: 0;
-  }
-}
-@media screen and (max-width: 790px) {
-  section {
-    min-height: 100vh;
-  }
-
-  nav {
-    padding-bottom: 25px;
-  }
-
-  #navbar {
+  
+  .projects{
+    padding: 0 15px 0 15px;
+    margin-bottom: 25px;
     text-align: center;
-    width: 100%;
   }
-  #navbar #brand {
-    float: none;
-    display: block;
+  
+  #back{
+    left: 15px;
   }
-  #navbar #nav {
-    border-top: 2px solid #FFFFFF;
-    float: none;
-    display: inline-block;
+  
+  
+  .project-img{
+    width: 80%;
   }
-
-  #main h1 {
-    font-size: 2rem;
-  }
-  #main h2 {
-    font-size: 1.5rem;
-  }
-  #main h3 {
-    font-size: 1rem;
-  }
-
-  #about, #contact {
-    float: none;
-    display: block;
-    width: 100%;
-  }
-
-  #contact {
-    margin-top: 25px;
-    position: static;
-  }
- 
-    #projects::before, #about::before, #main::before{
-    height: 100px;
-    margin-top: -100px;
-  }
-
-  .skill {
-    display: block;
-    min-height: 0;
-  }
-}
-@media screen and (max-width: 650px) and (min-width: 582px) {
-  #main h1 {
-    font-size: 1.75rem;
-  }
-}
-@media screen and (max-width: 581px) {
-  #top{
-    margin-top: 100px;
-  }
-  .section-inner {
-    margin: 25px;
-  }
-
-  #main h1 {
-    font-size: 1.5rem;
-  }
-  #main h2 {
-    font-size: 1rem;
-  }
-  #main h3 {
-    font-size: .9rem;
-  }
-
-  #navbar #nav ul li:not(:last-child) {
-    margin-right: 15px;
-  }
-
-  .project img {
-    height: 250px;
-  }
-
-  .arrow {
-    margin-top: 150px;
-  }
-}
-@media screen and (max-width: 460px) {
-  #top {
-    padding: 0;
-  }
-
-  #navbar {
+  
+  .projects p{
+    width: 80%;
+    margin-left: 0;
     margin-top: 10px;
   }
-
-  #main h1 {
-    font-size: 1.2rem;
-  }
-
-  #projects {
-    background-color: #FFFFFF;
-  }
-
-  .header {
-    font-size: 2.5rem;
-  }
-
-  #projects::before, #about::before, #main::before{
-    content: '';
-    height: 110px;
-    margin-top: -110px;
+  
+  #intro p{
+    font-size: 5em;
   }
 }
-@media screen and (max-width: 380px) {
-  #main h1 {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 377px) {
-  #navbar #nav ul li {
-    float: left;
-    font-size: 1rem;
-  }
-  #navbar #nav ul li:not(:last-child) {
-    margin-right: 10px;
-  }
 
-  .project img {
-    height: 200px;
+@media screen and (max-width: 440px){
+  #intro {
+    padding: 25px 0 25px 25px;
   }
-
-  .arrow {
-    margin-top: 130px;
+  
+  .projects{
+    text-align: left;
   }
-}
-@media screen and (max-width: 333px) {
-  #top{
-    margin-top: 110px;
+  
+  #intro p{
+    font-size: 3.5em;
   }
-  #projects::before{
-    content: '';
+  
+  #links{
+    padding: 0 25px 25px 25px;
+  }
+  
+  .project-img{
+    width: 100%;
+  }
+  
+  .projects p{
+    width: 100%; 
+  }
+  
+  #links a{
     display: block;
-    height: 110px;
-    width: 0;
-    position: relative;
-    margin-top: -110px;
-  }
-  .section-inner {
-    margin: 15px;
+    margin-bottom: 10px;
   }
 }
-/* Scroll right when less than 315px */
-@media screen and (max-width: 315px) {
-  * {
-    max-width: 1000vw;
-    overflow: auto;
+
+.rotateOut{
+  animation: rotateOut 1s;
+}
+
+@keyframes rotateOut {
+  0%{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform-origin: bottom left;
+    transform-style: preserve-3D;
+  }
+  
+  50%{
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+    transform-style: preserve-3D;
+  }
+  
+  100%{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    transform-style: preserve-3D;
+  }
+}
+
+
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 
-  html, body {
-    overflow-x: scroll;
+  25% {
+    -webkit-transform: scale(1.001);
+    transform: scale(1.0001);
+  }
+
+  50% {
+    -webkit-transform: scale(1.002);
+    transform: scale(1.002);
+  }
+  
+  75% {
+    -webkit-transform: scale(1.001);
+    transform: scale(1.001);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(1.001);
+    -ms-transform: scale(1.001);
+    transform: scale(1.001);
+  }
+
+  50% {
+    -webkit-transform: scale(1.002);
+    -ms-transform: scale(1.002);
+    transform: scale(1.002);
+  }
+  
+  75% {
+    -webkit-transform: scale(1.001);
+    -ms-transform: scale(1.001);
+    transform: scale(1.001);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
   }
 }
