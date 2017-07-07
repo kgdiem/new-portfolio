@@ -1,31 +1,42 @@
-section{
-  width: 100vw;
+#intro{
+  margin: 50px 0 50px 50px;
 }
 
-#intro, #projects{
-  padding: 75px 0 50px 75px;
+
+#projects{
+  margin: 50px 25px 25px 25px;
 }
 
 #top{
   height: 100vh;
 }
 
+.breathe{
+  -webkit-animation: breathing 10s ease-out infinite normal;
+  animation: breathing 10s ease-out infinite normal;
+}
+
 #intro p{
-  font-size: 7em;
+  font-size: 5em;
   line-height: 1em;
-  -webkit-animation: breathing 5s ease-out infinite normal;
-  animation: breathing 5s ease-out infinite normal;
 }
 
 #links{
+  margin-top: 25px;
+}
+
+#links div{
   text-align: center;
 }
 
 #links a{
   border: 2px solid #50596c;
   padding: 15px;
-  font-size: 1.5em;
   color: #50596c;
+  font-size: 2em;
+}
+
+#links a:not(:last-child){
   margin-right: 15px;
 }
 
@@ -34,9 +45,13 @@ section{
   text-align: center;
 }
 
+#projects h1{
+  margin-bottom: 20px;
+}
+
 .projects{
   text-align: left;
-  padding: 0 75px 50px 75px;
+  padding: 0 50px 50px 50px;
 }
 
 .projects-div{
@@ -78,13 +93,38 @@ section{
   text-decoration: none;
 }
 
-@media screen and (max-width: 690px){
+@media screen and (min-width: 960px){
   #intro{
-    padding: 50px 0 25px 50px;  
+    margin: 50px;
+  }
+  
+  #intro p{
+    font-size: 6em;
+  }
+
+  #links a{
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 690px){
+  #intro, #links{
+    margin: 25px;  
+  }
+  
+  #apps{
+    display: block;
+  }
+  
+  #projects{
+    margin: 25px 15px 25px 15px;
   }
   
   .projects{
-    padding: 0 15px 0 15px;
+    padding: 0;
+  }
+  
+  .projects{
     margin-bottom: 25px;
     text-align: center;
   }
@@ -92,7 +132,6 @@ section{
   #back{
     left: 15px;
   }
-  
   
   .project-img{
     width: 80%;
@@ -105,13 +144,27 @@ section{
   }
   
   #intro p{
-    font-size: 5em;
+    font-size: 4em;
+  }
+  
+  #links{
+    margin-top: 0;  
+    margin-bottom: 0;
+  }
+  
+  #links a{
+    display: block;
+  }
+  
+  #links a:not(:last-child){
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }
 
 @media screen and (max-width: 440px){
   #intro {
-    padding: 25px 0 25px 25px;
+    margin: 25px 15px 25px 15px;
   }
   
   .projects{
@@ -119,11 +172,11 @@ section{
   }
   
   #intro p{
-    font-size: 3.5em;
+    font-size: 3em;
   }
   
   #links{
-    padding: 0 25px 25px 25px;
+    margin: 0 15px 0px 15px;
   }
   
   .project-img{
@@ -134,43 +187,70 @@ section{
     width: 100%; 
   }
   
-  #links a{
-    display: block;
-    margin-bottom: 10px;
-  }
 }
 
 .rotateOut{
-  animation: rotateOut 1s;
+  animation: rotateOut 1s ease-out;
+}
+
+.rotateOutLeft{
+  animation: rotateOutLeft 1s ease-out;
+}
+
+.rotateInBottom{
+  animation: rotateInBottom 1s ease-in;
+}
+
+.rotateInTop{
+  animation: rotateInTop 1s ease-in;
 }
 
 @keyframes rotateOut {
-  0%{
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-    transform-origin: bottom left;
-    transform-style: preserve-3D;
-  }
   
-  50%{
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    transform-origin: bottom left;
-    transform-style: preserve-3D;
-  }
-  
-  100%{
+  100% {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    transform-origin: bottom left;
+    transform-style: preserve-3D;
+  }
+}
+
+@keyframes rotateOutLeft {
+  
+  100% {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+    transform-style: preserve-3D;
+  }
+}
+
+@keyframes rotateInBottom {
+  0%{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    transform-style: preserve-3D;
+  }
+  
+}
+
+@keyframes rotateInTop {
+  0%{
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
     transform-origin: bottom left;
     transform-style: preserve-3D;
   }

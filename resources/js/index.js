@@ -4,7 +4,7 @@ var home = document.querySelector('#top');
 var type = document.querySelector('#type');
 var interval; 
 
-var types = ['web', 'android', 'javascript', 'java', 'php', 'python'];
+var types = ['web', 'android', 'js', 'java', 'php', 'python'];
 
 getProjects().then(json => {
   appendProjects(json);
@@ -66,24 +66,56 @@ function switchToProjects(e){
   e.preventDefault();
   e.stopPropagation();
   
-  home.style.display = 'none';
+  home.classList.add('rotateOut');
   
-  clearInterval(interval);
-  
-  projectSection.style.display = 'initial';
+  setTimeout(function() {
+    projectSection.style.display = 'block';
     
+    projectSection.classList.add('rotateInTop');
+    
+    setTimeout(function(){
+      projectSection.classList.remove('rotateInTop');
+    }, 900);
+    
+  }, 600);
   
+  setTimeout(function(){
+    
+    home.style.display = 'none';
+    home.classList.remove('rotateOut');
+    
+    clearInterval(interval);
+    
+  }, 900);
 }
 
 function switchToHome(e){
   e.preventDefault();
   e.stopPropagation();
   
-  projectSection.style.display = 'none';
-    
-  changeTextInitiator();
+  projectSection.classList.add('rotateOutLeft');
   
-  home.style.display = 'initial';
+  setTimeout(function(){
+    home.style.display = 'block';
+      
+    home.classList.add('rotateInBottom');
+    
+    setTimeout(function(){
+      home.classList.remove('rotateInBottom');
+    }, 900);
+    
+  }, 600);
+      
+  
+  setTimeout(function(){
+    
+    projectSection.style.display = 'none';
+    changeTextInitiator();
+    
+    return projectSection.classList.remove('rotateOutLeft');
+    
+  }, 900);
+  
 }
 
 function changeTextInitiator(index = 0){
@@ -103,7 +135,7 @@ function changeTextInitiator(index = 0){
 }
 
 function changeText(str){
+  var ps = document.querySelectorAll('#intro p');
   
   type.textContent = str;
 }
-
