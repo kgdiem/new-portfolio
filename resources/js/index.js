@@ -87,9 +87,9 @@ function switchToProjects(e){
     
     setTimeout(function(){
       projectSection.classList.remove('rotateInTop');
-    }, 900);
+    }, 600);
     
-  }, 600);
+  }, 350);
   
   setTimeout(function(){
     
@@ -98,7 +98,7 @@ function switchToProjects(e){
     
     clearInterval(interval);
     
-  }, 900);
+  }, 600);
 }
 
 function switchToHome(e){
@@ -117,9 +117,9 @@ function switchToHome(e){
     
     setTimeout(function(){
       home.classList.remove('rotateInBottom');
-    }, 900);
+    }, 600);
     
-  }, 600);
+  }, 350);
       
   
   setTimeout(function(){
@@ -129,7 +129,7 @@ function switchToHome(e){
     
     return projectSection.classList.remove('rotateOutLeft');
     
-  }, 900);
+  }, 600);
   
 }
 

@@ -194,19 +194,19 @@
 }
 
 .rotateOut{
-  animation: rotateOut 1s ease-out;
+  animation: rotateOut .7s ease-out;
 }
 
 .rotateOutLeft{
-  animation: rotateOutLeft 1s ease-out;
+  animation: rotateOutLeft .7s ease-out;
 }
 
 .rotateInBottom{
-  animation: rotateInBottom 1s ease-in;
+  animation: rotateInBottom .7s ease-in;
 }
 
 .rotateInTop{
-  animation: rotateInTop 1s ease-in;
+  animation: rotateInTop .7s ease-in;
 }
 
 @keyframes rotateOut {
