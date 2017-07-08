@@ -15,6 +15,14 @@ changeTextInitiator();
 document.querySelector('a[href="#projects"]').onclick = switchToProjects;
 document.querySelector('#back').onclick = switchToHome;
 
+window.onpopstate = function(event) {
+  if(document.location.pathname == '/projects'){
+    switchToProjects();
+  }else{
+    switchToHome();
+  }
+};
+
 async function getProjects(){
   var data = await fetch('/projects');
   
@@ -63,8 +71,10 @@ function projectNode(project){
 }
 
 function switchToProjects(e){
-  e.preventDefault();
-  e.stopPropagation();
+  if(e){
+    e.preventDefault();
+    e.stopPropagation();
+  }
   
   home.classList.add('rotateOut');
   
@@ -72,6 +82,8 @@ function switchToProjects(e){
     projectSection.style.display = 'block';
     
     projectSection.classList.add('rotateInTop');
+    
+    history.pushState({}, "Projects", "projects");
     
     setTimeout(function(){
       projectSection.classList.remove('rotateInTop');
@@ -90,15 +102,18 @@ function switchToProjects(e){
 }
 
 function switchToHome(e){
-  e.preventDefault();
-  e.stopPropagation();
-  
+  if(e){
+    e.preventDefault();
+    e.stopPropagation();
+  }
   projectSection.classList.add('rotateOutLeft');
   
   setTimeout(function(){
     home.style.display = 'block';
       
     home.classList.add('rotateInBottom');
+    
+    history.pushState({}, "Kevin Diem", "/");
     
     setTimeout(function(){
       home.classList.remove('rotateInBottom');
