@@ -13,10 +13,7 @@ getProjects().then(json => {
 changeTextInitiator();
 
 document.querySelector('a[href="#projects"]').onclick = switchToProjects;
-document.querySelector('#back').onclick = function(){
-  console.log("xx");
-  window.history.back();
-}
+document.querySelector('#back').onclick = () => window.history.back();
 window.onpopstate = function(event) {
   if(document.location.pathname == '/projects'){
     switchToProjects();
