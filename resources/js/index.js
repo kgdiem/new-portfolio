@@ -4,16 +4,16 @@ var home = document.querySelector('#top');
 var type = document.querySelector('#type');
 var interval; 
 
-var types = ['web', 'android', 'js', 'java', 'php', 'python'];
+var types = ['web', 'android', 'javascript', 'java', 'php', 'python'];
 
 getProjects().then(json => {
   appendProjects(json);
 });
 
+changeTextInitiator();
+
 document.querySelector('a[href="#projects"]').onclick = switchToProjects;
 document.querySelector('#back').onclick = switchToHome;
-
-changeTextInitiator();
 
 async function getProjects(){
   var data = await fetch('/projects');

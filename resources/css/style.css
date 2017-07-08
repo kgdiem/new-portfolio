@@ -109,7 +109,11 @@
 
 @media screen and (max-width: 690px){
   #intro, #links{
-    margin: 25px;  
+    margin: 25px;
+  }
+  
+  #intro{
+    margin-right: 0px;
   }
   
   #apps{
@@ -164,7 +168,7 @@
 
 @media screen and (max-width: 440px){
   #intro {
-    margin: 25px 15px 25px 15px;
+    margin: 25px 0px 25px 15px;
   }
   
   .projects{
