@@ -12,15 +12,23 @@ getProjects().then(json => {
 
 changeTextInitiator();
 
-document.querySelector('a[href="#projects"]').onclick = switchToProjects;
-document.querySelector('#back').onclick = () => window.history.back();
 window.onpopstate = function(event) {
+  console.log(document.location);
   if(document.location.pathname == '/projects'){
     switchToProjects();
   }else{
     switchToHome();
   }
 };
+
+window.onload = function(event){
+  if(document.location.pathname == '/projects'){
+    switchToProjects();
+  }
+}
+
+document.querySelector('a[href="#projects"]').onclick = switchToProjects;
+document.querySelector('#back').onclick = () => switchToHome();
 
 async function getProjects(){
   var data = await fetch('/api/projects');

@@ -30,6 +30,7 @@ def make_app():
     
     return tornado.web.Application([
         (r"/", IndexHandler),
+        (r"/projects", IndexHandler),
         (r"/login", LoginHandler, authDbProvider),
         (r"/logout", LogoutHandler),
         (r"/signup", SignupHandler, authDbProvider),

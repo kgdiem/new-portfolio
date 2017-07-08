@@ -84,16 +84,24 @@ getProjects().then(function (json) {
 
 changeTextInitiator();
 
-document.querySelector('a[href="#projects"]').onclick = switchToProjects;
-document.querySelector('#back').onclick = function () {
-  return window.history.back();
-};
 window.onpopstate = function (event) {
+  console.log(document.location);
   if (document.location.pathname == '/projects') {
     switchToProjects();
   } else {
     switchToHome();
   }
+};
+
+window.onload = function (event) {
+  if (document.location.pathname == '/projects') {
+    switchToProjects();
+  }
+};
+
+document.querySelector('a[href="#projects"]').onclick = switchToProjects;
+document.querySelector('#back').onclick = function () {
+  return switchToHome();
 };
 
 async function getProjects() {
