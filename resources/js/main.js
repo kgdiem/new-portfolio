@@ -97,7 +97,7 @@ window.onpopstate = function (event) {
 };
 
 async function getProjects() {
-  var data = await fetch('/projects');
+  var data = await fetch('/api/projects');
 
   var json = await data.json();
 

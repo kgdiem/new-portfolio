@@ -33,7 +33,7 @@ def make_app():
         (r"/login", LoginHandler, authDbProvider),
         (r"/logout", LogoutHandler),
         (r"/signup", SignupHandler, authDbProvider),
-        (r"/projects", ProjectHandler, projectDbProvider),
+        (r"/api/projects", ProjectHandler, projectDbProvider),
         (r"/projects/create", CreateProjectHandler, projectDbProvider),
         (r"/resources/(.*)", tornado.web.StaticFileHandler, {"path": resources}),
     ], **settings)

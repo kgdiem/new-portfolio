@@ -16,7 +16,7 @@ class ProjectsTests(AsyncHTTPTestCase):
         
 
     def test_get_all_projects(self):
-        response = self.fetch('/projects')
+        response = self.fetch('/api/projects')
         
         self.assertEqual(response.code, 200)
         
