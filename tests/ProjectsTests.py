@@ -31,22 +31,18 @@ class ProjectsTests(AsyncHTTPTestCase):
             "response.headers['Location'] did not end with /login. Got: %s" % response.headers['Location']
         )
     
-    def test_auth_project_submission(self):
-        
-        response = self.fetch('/projects/create', method="GET", headers=self.get_headers(), follow_redirects=False)
-        
-        self.assertEqual(response.code, 200)
-    
     def test_unauth_project_creation(self):
         response = self.fetch('/projects/create', method="POST", body="{}", follow_redirects=False)
         
         self.assertEqual(response.code, 403)
+        
     
     def test_auth_project_creation(self):
         
         response = self.fetch('/projects/create', method="POST", headers=self.get_headers(), body="{}", follow_redirects=False)
         
         self.assertEqual(response.code, 200)
+        
     
     def get_headers(self):
         cookieName = "user"
