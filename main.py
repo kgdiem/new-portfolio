@@ -26,6 +26,7 @@ def make_app():
       template_path=templates,
       cookie_secret='tempSecret123',
       login_url="/login",
+      gzip=True
     )
     
     return tornado.web.Application([
