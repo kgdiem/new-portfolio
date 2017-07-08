@@ -13,8 +13,10 @@ getProjects().then(json => {
 changeTextInitiator();
 
 document.querySelector('a[href="#projects"]').onclick = switchToProjects;
-document.querySelector('#back').onclick = switchToHome;
-
+document.querySelector('#back').onclick = function(){
+  console.log("xx");
+  window.history.back();
+}
 window.onpopstate = function(event) {
   if(document.location.pathname == '/projects'){
     switchToProjects();
@@ -83,7 +85,7 @@ function switchToProjects(e){
     
     projectSection.classList.add('rotateInTop');
     
-    history.pushState({}, "Projects", "projects");
+    window.history.pushState({}, "Projects", "projects");
     
     setTimeout(function(){
       projectSection.classList.remove('rotateInTop');
@@ -113,7 +115,7 @@ function switchToHome(e){
       
     home.classList.add('rotateInBottom');
     
-    history.pushState({}, "Kevin Diem", "/");
+    window.history.pushState({}, "Kevin Diem", "/");
     
     setTimeout(function(){
       home.classList.remove('rotateInBottom');

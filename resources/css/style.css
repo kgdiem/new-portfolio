@@ -87,6 +87,7 @@
   left: 75px;
   font-size: 3.5em;
   color: #50596c;
+  cursor: pointer;
 }
 
 #back:hover{
