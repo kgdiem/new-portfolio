@@ -1,12 +1,16 @@
 import os
 import sys
+
 from tornado.testing import AsyncHTTPTestCase
+from tornado.web import create_signed_value
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import main
+from routes.projects import ProjectHandler
 
-class TestProjects(AsyncHTTPTestCase):
+
+class ProjectsTests(AsyncHTTPTestCase):
     def get_app(self):
         return main.make_app()
         
@@ -16,8 +20,8 @@ class TestProjects(AsyncHTTPTestCase):
         
         self.assertEqual(response.code, 200)
         
-        
-    def test_auth_for_project_submission(self):
+    
+    def test_unauth_project_submission(self):
         response = self.fetch('/projects/create', method="GET", follow_redirects=False)
         
         self.assertEqual(response.code, 302)
@@ -26,13 +30,32 @@ class TestProjects(AsyncHTTPTestCase):
             response.headers['Location'].endswith('/login?next=%2Fprojects%2Fcreate'),
             "response.headers['Location'] did not end with /login. Got: %s" % response.headers['Location']
         )
+    
+    def test_auth_project_submission(self):
         
-    def test_auth_for_project_creation(self):
-        response = self.fetch('/projects/create', method="POST", follow_redirects=False)
+        response = self.fetch('/projects/create', method="GET", headers=self.get_headers(), follow_redirects=False)
         
-        self.assertEqual(response.code, 302)
+        self.assertEqual(response.code, 200)
+    
+    def test_unauth_project_creation(self):
+        response = self.fetch('/projects/create', method="POST", body="{}", follow_redirects=False)
         
-        self.assertTrue(
-            response.headers['Location'].endswith('/login?next=%2Fprojects%2Fcreate'),
-            "response.headers['Location'] did not end with /login. Got: %s" % response.headers['Location']
-        )
+        self.assertEqual(response.code, 403)
+    
+    def test_auth_project_creation(self):
+        
+        response = self.fetch('/projects/create', method="POST", headers=self.get_headers(), body="{}", follow_redirects=False)
+        
+        self.assertEqual(response.code, 200)
+    
+    def get_headers(self):
+        cookieName = "user"
+        
+        secure_cookie = create_signed_value(
+            self.get_app().settings["cookie_secret"],
+            cookieName,
+            "1234")
+            
+        headers = {'Cookie': '='.join((cookieName, secure_cookie))}
+        
+        return headers
