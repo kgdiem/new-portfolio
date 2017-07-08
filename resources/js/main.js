@@ -196,6 +196,8 @@ function changeTextInitiator() {
 
   changeText(types[index]);
 
+  if (interval) clearInterval(interval);
+
   interval = setInterval(function () {
     index++;
 
@@ -203,6 +205,8 @@ function changeTextInitiator() {
 
     changeText(types[index]);
   }, 2000);
+
+  console.log(interval);
 }
 
 function changeText(str) {

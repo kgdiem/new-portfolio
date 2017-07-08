@@ -135,6 +135,9 @@ function changeTextInitiator(index = 0){
   
   changeText(types[index]);
   
+  if(interval)
+    clearInterval(interval);
+  
   interval = setInterval(function(){
     index++;
     
@@ -145,6 +148,7 @@ function changeTextInitiator(index = 0){
     
   }, 2000);
   
+  console.log(interval);
 }
 
 function changeText(str){
