@@ -149,7 +149,5 @@ function changeTextInitiator(index = 0){
 }
 
 function changeText(str){
-  var ps = document.querySelectorAll('#intro p');
-  
   type.textContent = str;
 }
