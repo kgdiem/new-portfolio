@@ -24,7 +24,7 @@ def make_app():
     settings = dict(
       debug=True,
       template_path=templates,
-      cookie_secret='tempSecret123',
+      cookie_secret=os.getenv("COOKIE_SECRET", 'Secret123'),
       login_url="/login",
       gzip=True
     )
