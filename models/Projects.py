@@ -9,9 +9,4 @@ class Projects:
     def get(self, id):
         return self.projects.find_one({'id': id})
         
-    def put(self, project):
-        id = self.projects.insert_one(project).inserted_id
-        
-        return id
-        
     

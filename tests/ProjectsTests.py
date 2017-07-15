@@ -21,29 +21,6 @@ class ProjectsTests(AsyncHTTPTestCase):
         self.assertEqual(response.code, 200)
         
     
-    def test_unauth_project_submission(self):
-        response = self.fetch('/projects/create', method="GET", follow_redirects=False)
-        
-        self.assertEqual(response.code, 302)
-        
-        self.assertTrue(
-            response.headers['Location'].endswith('/login?next=%2Fprojects%2Fcreate'),
-            "response.headers['Location'] did not end with /login. Got: %s" % response.headers['Location']
-        )
-    
-    def test_unauth_project_creation(self):
-        response = self.fetch('/projects/create', method="POST", body="{}", follow_redirects=False)
-        
-        self.assertEqual(response.code, 403)
-        
-    
-    def test_auth_project_creation(self):
-        
-        response = self.fetch('/projects/create', method="POST", headers=self.get_headers(), body="{}", follow_redirects=False)
-        
-        self.assertEqual(response.code, 200)
-        
-    
     def get_headers(self):
         cookieName = "user"
         

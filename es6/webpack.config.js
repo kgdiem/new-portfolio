@@ -8,7 +8,7 @@ module.exports = {
     module: {
         loaders: [{
             test: path.join(__dirname),
-            exclude: /node_modules/,
+            exclude: /(node_modules)|(tests)/,
             loader: 'babel-loader',
             query: {
                 presets: ['es2015']

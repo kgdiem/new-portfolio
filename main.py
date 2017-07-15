@@ -9,7 +9,7 @@ from routes.index import IndexHandler
 from routes.login import LoginHandler
 from routes.logout import LogoutHandler
 from routes.signup import SignupHandler
-from routes.projects import ProjectHandler, CreateProjectHandler
+from routes.projects import ProjectHandler
 
 resources = os.path.join(os.path.dirname(__file__), 'resources')
 templates = os.path.join(os.path.dirname(__file__), 'resources/views')
@@ -36,7 +36,6 @@ def make_app():
         (r"/logout", LogoutHandler),
         (r"/signup", SignupHandler, authDbProvider),
         (r"/api/projects", ProjectHandler, projectDbProvider),
-        (r"/projects/create", CreateProjectHandler, projectDbProvider),
         (r"/resources/(.*)", tornado.web.StaticFileHandler, {"path": resources}),
     ], **settings)
 
