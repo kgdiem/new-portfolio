@@ -6,9 +6,6 @@ import tornado.web
 from pymongo import MongoClient
 
 from routes.index import IndexHandler
-from routes.login import LoginHandler
-from routes.logout import LogoutHandler
-from routes.signup import SignupHandler
 from routes.projects import ProjectHandler
 
 resources = os.path.join(os.path.dirname(__file__), 'resources')
@@ -32,9 +29,6 @@ def make_app():
     return tornado.web.Application([
         (r"/", IndexHandler),
         (r"/projects", IndexHandler),
-        (r"/login", LoginHandler, authDbProvider),
-        (r"/logout", LogoutHandler),
-        (r"/signup", SignupHandler, authDbProvider),
         (r"/api/projects", ProjectHandler, projectDbProvider),
         (r"/resources/(.*)", tornado.web.StaticFileHandler, {"path": resources}),
     ], **settings)
