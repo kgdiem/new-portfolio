@@ -125,17 +125,18 @@ function projectNode(project) {
 
   p.classList.add('col-12');
   p.classList.add('projects');
-
-  if (project.git) {
-    description += '<br><a href="' + project.git + '"><img height="50px" width="50px" src="http://untv.github.io/assets/images/github-icon-black.svg"></a>';
+  /*
+  if(project.git){
+    description += `<br><a href="${project.git}"><img height="50px" width="50px" src="http://untv.github.io/assets/images/github-icon-black.svg"></a>`;
   }
-
-  if (project.url) {
-    if (!project.git) description += '<br>';
-
-    description += '<a href="' + project.url + '"><img height="50px" width="40px" src="http://cdn.onlinewebfonts.com/svg/img_387394.svg"></a>';
+  
+  if(project.url){
+    if(!project.git)
+      description += '<br>';
+      
+    description += `<a href="${project.url}"><img height="50px" width="40px" src="http://cdn.onlinewebfonts.com/svg/img_387394.svg"></a>`
   }
-
+  */
   p.innerHTML = '\n    <h2>' + project.name + '</h2>\n    <div class="projects-div">\n      <div>\n        <img class="project-img" src="' + project.img + '">\n        <p>' + description + '</p>\n      </div>\n    </div>';
 
   return p;
