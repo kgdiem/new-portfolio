@@ -10,7 +10,13 @@ class TestIndex(AsyncHTTPTestCase):
     def get_app(self):
         return main.make_app()
 
-    def test_homepage(self):
+    def test_homepage_status(self):
         response = self.fetch('/')
+        
         self.assertEqual(response.code, 200)
+        
+        with open('../resources/views/index.html') as file:
+            
+            self.assertEqual(response.body, file.read())
+            
         self.stop()

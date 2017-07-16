@@ -1,5 +1,4 @@
 var projectSection = document.querySelector('#projects');
-var projectContainer = document.querySelector('#projects .container');
 var home = document.querySelector('#top');
 var type = document.querySelector('#type');
 var interval; 
