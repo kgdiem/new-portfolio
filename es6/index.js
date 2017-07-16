@@ -51,7 +51,7 @@ function projectNode(project){
 
   p.classList.add('col-12');
   p.classList.add('projects');
-  
+  /*
   if(project.git){
     description += `<br><a href="${project.git}"><img height="50px" width="50px" src="http://untv.github.io/assets/images/github-icon-black.svg"></a>`;
   }
@@ -62,7 +62,7 @@ function projectNode(project){
       
     description += `<a href="${project.url}"><img height="50px" width="40px" src="http://cdn.onlinewebfonts.com/svg/img_387394.svg"></a>`
   }
-  
+  */
   p.innerHTML = `
     <h2>${project.name}</h2>
     <div class="projects-div">
