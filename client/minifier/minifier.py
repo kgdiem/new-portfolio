@@ -6,12 +6,13 @@ from os.path import exists, basename
 def minifyHtml(dir, out):
     
     basePath = 'views'
-    
+    print(dir)
     path = '%s/%s/%s' % (dir, basePath, '**/*.html')
     
     for filePath in glob(path, recursive=True):
         
         with open(filePath, 'r') as file:
+            print(filePath)
             outPath = '%s/%s%s' % (out, basePath, filePath.split(basePath)[1])
             
             if not exists(outPath.replace(basename(outPath), "")):
