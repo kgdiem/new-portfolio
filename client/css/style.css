@@ -1,3 +1,101 @@
+/**
+* FROM spectre css
+*/
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: 1.42857143;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  background: #fff;
+  color: #50596c;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1.4rem;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+a {
+  color: #5764c6;
+  outline: none;
+  text-decoration: none;
+}
+a:focus {
+  box-shadow: 0 0 0 .2rem rgba(87, 100, 198, .15);
+}
+a:focus,
+a:hover,
+a:active,
+a.active {
+  color: #3b49af;
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+  font-size: 5rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.4rem;
+}
+h5 {
+  font-size: 2rem;
+}
+h6 {
+  font-size: 1.6rem;
+}
+p {
+  line-height: 2.4rem;
+  margin: 0 0 1rem;
+}
+a,
+ins,
+u {
+  -webkit-text-decoration-skip: ink edges;
+  text-decoration-skip: ink edges;
+}
+.col-12 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 100%;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+/**
+* END spectre styles
+*/
+
 #intro{
   margin: 50px 0 50px 50px;
 }
@@ -51,11 +149,11 @@
 
 .projects{
   text-align: left;
-  padding: 0 50px 50px 50px;
 }
 
 .projects-div{
   display: table;
+  padding: 0 50px 50px 50px;
 }
 
 .projects h2{
