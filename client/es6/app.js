@@ -6,14 +6,11 @@ module.exports = (() => {
     
     var types = ['web', 'android', 'javascript', 'java', 'php', 'python'];
     
-    getProjects().then(json => {
-      appendProjects(json);
-    });
+    getProjects().then(appendProjects);
     
     changeTextInitiator();
     
     window.onpopstate = function(event) {
-      console.log(document.location);
       if(document.location.pathname == '/projects'){
         switchToProjects();
       }else{
@@ -28,7 +25,7 @@ module.exports = (() => {
     }
     
     document.querySelector('a[href="#projects"]').onclick = switchToProjects;
-    document.querySelector('#back').onclick = () => switchToHome();
+    document.querySelector('#back').onclick = switchToHome;
     
     async function getProjects(){
       var data = await fetch('/api/projects');
@@ -39,18 +36,15 @@ module.exports = (() => {
     }
     
     function appendProjects(projects){
-      projects.map((project, i) => {
-        projectSection.appendChild(projectNode(project));
-      });
+      projects.map(project => projectSection.appendChild(projectNode(project)));
     }
     
     function projectNode(project){
       var p = document.createElement('div');
       
-      var description = project.desc ? project.desc : `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`;
+      var description = project.desc ? project.desc : ``;
     
-      p.classList.add('col-12');
-      p.classList.add('projects');
+      p.classList.add('col-12', 'projects');
       /*
       if(project.git){
         description += `<br><a href="${project.git}"><img height="50px" width="50px" src="http://untv.github.io/assets/images/github-icon-black.svg"></a>`;
@@ -156,7 +150,6 @@ module.exports = (() => {
         
       }, 2000);
       
-      console.log(interval);
     }
     
     function changeText(str){
