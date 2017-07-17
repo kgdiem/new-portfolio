@@ -224,12 +224,12 @@ u {
   }
   
   .projects{
-    padding: 0;
-  }
-  
-  .projects{
     margin-bottom: 25px;
     text-align: center;
+  }
+  
+  .projects-div{
+    padding: 0;
   }
   
   #back{
