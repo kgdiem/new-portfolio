@@ -20,7 +20,7 @@ function appendProjects(projects){
 function projectNode(project){
   let p = document.createElement('div');
   
-  const description = project.desc ? project.desc : ``;
+  let description = project.desc ? project.desc : ``;
 
   p.classList.add('col-12', 'projects');
   

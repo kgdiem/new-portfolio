@@ -1,4 +1,4 @@
-python3.5 minify.py
+python3 minify.py
 
 cd es6
 
