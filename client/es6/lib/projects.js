@@ -23,18 +23,18 @@ function projectNode(project){
   const description = project.desc ? project.desc : ``;
 
   p.classList.add('col-12', 'projects');
-  /*
+  
   if(project.git){
-    description += `<br><a href="${project.git}"><img height="50px" width="50px" src="http://untv.github.io/assets/images/github-icon-black.svg"></a>`;
+    description += `<br><a href="${project.git}"><img height="50px" width="50px" src="/resources/icons/github-icon-black.svg"></a>`;
   }
   
   if(project.url){
     if(!project.git)
       description += '<br>';
       
-    description += `<a href="${project.url}"><img height="50px" width="40px" src="http://cdn.onlinewebfonts.com/svg/img_387394.svg"></a>`
+    description += `<a href="${project.url}"><img height="50px" width="40px" src="/resources/icons/web.svg"></a>`
   }
-  */
+  
   p.innerHTML = `
     <h2>${project.name}</h2>
     <div class="projects-div">
