@@ -7,6 +7,7 @@ from pymongo import MongoClient
 
 from routes.index import IndexHandler
 from routes.projects import ProjectHandler
+from routes.notFoundHandler import NotFoundHandler
 
 resources = os.path.join(os.path.dirname(__file__), 'resources')
 templates = os.path.join(os.path.dirname(__file__), 'resources/views')
@@ -19,11 +20,12 @@ authDbProvider = dict(database = client.portfolio.users)
 
 def make_app():
     settings = dict(
-      debug=True,
+      debug=(os.getenv("ENVIRONMENT", "PROD") == "DEV"),
       template_path=templates,
       cookie_secret=os.getenv("COOKIE_SECRET", 'Secret123'),
       login_url="/login",
-      gzip=True
+      gzip=True,
+      default_handler_class=NotFoundHandler
     )
     
     return tornado.web.Application([
