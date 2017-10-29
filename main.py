@@ -19,7 +19,7 @@ authDbProvider = dict(database = client.portfolio.users)
 
 def make_app():
     settings = dict(
-      debug=True,
+      debug=(os.getenv("ENVIRONMENT", "PROD") == "DEV"),
       template_path=templates,
       cookie_secret=os.getenv("COOKIE_SECRET", 'Secret123'),
       login_url="/login",
