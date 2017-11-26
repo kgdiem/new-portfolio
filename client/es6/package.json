@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgdiem/new-portfolio.git"
+  },
+  "author": "Kevin Diem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kgdiem/new-portfolio/issues"
+  },
+  "homepage": "https://kevindiem.com",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.1.0"
+  },
+  "dependencies": {}
+}
